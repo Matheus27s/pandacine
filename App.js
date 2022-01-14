@@ -1,18 +1,17 @@
 import React, { useState } from 'react';
-import { SafeAreaView, Text, StatusBar } from 'react-native';
+import { enableFreeze } from 'react-native-screens';
+import { NavigationContainer } from '@react-navigation/native';
 
-import { styles } from './src/global/styles/styles';
+import StackNavigation from './src/routes';
 
 function App() {
-  const [ value ] = useState('Bem vindo ao React Native!');
+  const [value] = useState('Bem vindo ao React Native!');
+  enableFreeze(true);
 
   return (
-    <SafeAreaView style={styles.background}>
-      <StatusBar barStyle='light-content' />
-      <Text style={styles.title}>{value}</Text>
-      <Text style={styles.content}>{value}</Text>
-      <Text style={styles.comment}>{value}</Text>
-    </SafeAreaView>
+    <NavigationContainer>
+      <StackNavigation />
+    </NavigationContainer>
   );
 };
 
