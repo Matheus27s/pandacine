@@ -10,7 +10,6 @@ export default {
         orange: "#C67E3B",
         nave: "#010827",
         white: "#FFFFFF",
-        white_100: "#F9F9F9",
         black: "#000000"
     },
 
@@ -27,7 +26,9 @@ export default {
     },
 
     size: {
-        maxHeight: height,
-        maxWidth: width,
+        fullHeight: height,
+        halfHeight: height /2,
+        fullWidth: width,
+        halfWidth: width / 2,
     }
 }
