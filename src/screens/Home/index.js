@@ -1,8 +1,10 @@
 import React from 'react';
-import { View, Text } from 'react-native';
+import { ScrollView, View, Text } from 'react-native';
 import MaterialIcons from 'react-native-vector-icons/dist/MaterialIcons';
 
 import Button from '../../Components/Button';
+import InfoHome from '../../Components/Card/InfoHome';
+
 import { styles } from './styles';
 
 function Home({ navigation }) {
@@ -12,17 +14,23 @@ function Home({ navigation }) {
     }
 
     return(
-        <View style={styles.background}>
-            <MaterialIcons name="desktop-windows" color="white" size={32}/>
-            <Text style={styles.comment}>
-                Caro colega, é com muita alegria que hoje lhe damos as boas-vindas! 
-                Saiba que todos estamos ansiosos para conhecer melhor você e o seu 
-                trabalho, pois com certeza será uma valiosa aquisição para a nossa equipe.
-                Aqui você encontrará todo o apoio que necessite, e uma equipe de trabalho 
-                que também funciona como uma pequena família, e nesse espírito lhe damos as 
-                boas-vindas com os braços abertos!</Text>
-            <Button onPress={handleNavigation}>Continuar</Button>
-        </View>
+        <ScrollView style={styles.background}>
+            <Text style={styles.title}>Onde a magia do cinema acontece!</Text>
+            <Text style={styles.title}>Promoções</Text>
+            <InfoHome 
+                title="Carteirinha de estudante"
+                onPress={()=>{}}
+            />
+            <InfoHome 
+                title="Carteirinha de estudante"
+                onPress={()=>{}}
+            />
+            <InfoHome 
+                title="Carteirinha de estudante"
+                onPress={()=>{}}
+            />            
+            <Button onPress={handleNavigation}>Filmes em cartaz</Button>
+        </ScrollView>
     );
 } 
 
