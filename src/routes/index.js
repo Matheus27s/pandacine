@@ -7,6 +7,7 @@ import UseTerms from '../screens/UseTerms';
 import Home from '../screens/Home';
 import Dashboard from '../screens/Dashboard';
 import FilmDetails from '../screens/FilmDetails';
+import Select from '../screens/Select';
 
 import theme from '../global/styles/theme';
 
@@ -64,6 +65,13 @@ function StackNavigation() {
           }}
           name="FilmDetails" 
           component={FilmDetails} 
+        />
+        <Stack.Screen         
+          options={{ 
+            title: 'Select' 
+          }}
+          name="Select" 
+          component={Select} 
         />
       </Stack.Navigator>
     );
