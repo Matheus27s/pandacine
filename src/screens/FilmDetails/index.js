@@ -1,17 +1,22 @@
 import React from 'react';
 import { View, Text } from 'react-native';
-import MaterialIcons from 'react-native-vector-icons/dist/MaterialIcons';
+import Fontisto from 'react-native-vector-icons/dist/Fontisto';
 
 import Button from '../../Components/Button';
 import { styles } from './styles';
 
-function FilmDetails() {
+function FilmDetails({ route, navigation }) {
+    const { film } = route.params;
+
+    function onNavigation(item) {
+        navigation.navigate('FilmDetails', { film: item });
+    }
+
     return(
         <View style={styles.background}>
-            <MaterialIcons name="color-lens" color="white" size={32}/>
-            <Text style={styles.comment}>
-                Caro colega, é com muita alegria que hoje lhe damos as boas-vindas!</Text>
-            <Button>Continuar</Button>
+            <Fontisto name="film" color="white" size={32}/>
+            <Text style={styles.comment}>{film.text}</Text>
+            <Button onPress={onNavigation}>Continuar</Button>
         </View>
     );
 } 

@@ -6,6 +6,7 @@ import ButtonIcons from '../Components/ButtonIcons';
 import UseTerms from '../screens/UseTerms';
 import Home from '../screens/Home';
 import Dashboard from '../screens/Dashboard';
+import FilmDetails from '../screens/FilmDetails';
 
 import theme from '../global/styles/theme';
 
@@ -53,9 +54,16 @@ function StackNavigation() {
         <Stack.Screen 
           name="Dashboard" 
           options={{ 
-            title: 'Panda Cine' 
+            title: 'Filmes' 
           }}
           component={Dashboard} 
+        />
+        <Stack.Screen         
+          options={{ 
+            title: 'Detalhes' 
+          }}
+          name="FilmDetails" 
+          component={FilmDetails} 
         />
       </Stack.Navigator>
     );
