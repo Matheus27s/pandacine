@@ -7,10 +7,18 @@ export const styles = StyleSheet.create({
         backgroundColor: theme.colors.nave,
         paddingHorizontal: 24,
     },
+    header: {
+        flexDirection: 'row',
+        alignItems: 'center',
+        marginBottom: 16,
+    },
+    footer: {
+        marginBottom: 16
+    },
     title: {
         color: theme.colors.white,
         fontFamily: theme.fonts.medium,
-        fontSize: theme.text.title
+        fontSize: theme.text.title,
     },
     content: {
         color: theme.colors.blue,
@@ -24,5 +32,8 @@ export const styles = StyleSheet.create({
         textAlign: 'justify',
         marginBottom: 16,
         marginTop: 16
+    },
+    image: {
+        height: theme.size.halfHeight,
     },
 });

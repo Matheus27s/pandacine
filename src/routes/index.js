@@ -42,7 +42,7 @@ function StackNavigation() {
             headerRight: () => (
               <ButtonIcons
                 onPress={() => alert('This is a button!')}
-                name="assistant-navigation"
+                name="map-marker-alt"
                 color="#fff"
                 size={24}
               />
