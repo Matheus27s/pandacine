@@ -9,6 +9,20 @@ export const styles = StyleSheet.create({
         backgroundColor: theme.colors.nave,
         paddingHorizontal: 24,
     },
+    containerVideo: {
+        width: theme.size.fullWidth / 1.2,
+        height: theme.size.halfHeight / 1.7,
+        backgroundColor: theme.colors.black,
+        borderRadius: 10
+    },
+    video: {
+        width: theme.size.fullWidth / 1.2,
+        height: theme.size.halfHeight / 1.7,
+        borderRadius: 10
+    },
+    footer: {
+        marginBottom: 16
+    },
     title: {
         color: theme.colors.blue,
         fontFamily: theme.fonts.bold,

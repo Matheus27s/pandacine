@@ -8,6 +8,7 @@ import Home from '../screens/Home';
 import Dashboard from '../screens/Dashboard';
 import FilmDetails from '../screens/FilmDetails';
 import Select from '../screens/Select';
+import SelectAccent from '../screens/SelectAccent';
 
 import theme from '../global/styles/theme';
 
@@ -25,56 +26,72 @@ function StackNavigation() {
     },
   }
 
-    return(
-      <Stack.Navigator
+  return (
+    <Stack.Navigator
       initialRouteName="UseTerms"
-      screenOptions={ screenOptions }
+      screenOptions={screenOptions}
+      mode="modal"
+    >
+      <Stack.Screen
+        options={{
+          title: 'Termo de Uso'
+        }}
+        name="UseTerms"
+        component={UseTerms}
+      />
+      <Stack.Screen
+        name="Home"
+        options={{
+          title: 'Panda Cine',
+          headerRight: () => (
+            <ButtonIcons
+              onPress={() => alert('This is a button!')}
+              name="map-marker-alt"
+              color="#fff"
+              size={24}
+            />
+          ),
+        }}
+        component={Home}
+      />
+      <Stack.Screen
+        name="Dashboard"
+        options={{
+          title: 'Filmes'
+        }}
+        component={Dashboard}
+      />
+      <Stack.Screen
+        options={{
+          title: 'Detalhes'
+        }}
+        name="FilmDetails"
+        component={FilmDetails}
+      />
+      <Stack.Group
+        screenOptions={{
+          presentation: 'transparentModal'
+        }}
       >
-        <Stack.Screen         
-          options={{ 
-            title: 'Termo de Uso' 
+        <Stack.Screen
+          options={{
+            title: 'Select'
           }}
-          name="UseTerms" 
-          component={UseTerms} 
+          name="Select"
+          component={Select}
         />
-        <Stack.Screen 
-          name="Home"
-          options={{ 
-            title: 'Panda Cine',
-            headerRight: () => (
-              <ButtonIcons
-                onPress={() => alert('This is a button!')}
-                name="map-marker-alt"
-                color="#fff"
-                size={24}
-              />
-            ),
-          }} 
-          component={Home} 
-       />
-        <Stack.Screen 
-          name="Dashboard" 
-          options={{ 
-            title: 'Filmes' 
+        <Stack.Screen
+          mode="card"
+          options={{
+            title: 'SelectAccent'
           }}
-          component={Dashboard} 
+          name="SelectAccent"
+          component={SelectAccent}
         />
-        <Stack.Screen         
-          options={{ 
-            title: 'Detalhes' 
-          }}
-          name="FilmDetails" 
-          component={FilmDetails} 
-        />
-        <Stack.Screen         
-          options={{ 
-            title: 'Select' 
-          }}
-          name="Select" 
-          component={Select} 
-        />
-      </Stack.Navigator>
-    );
+
+      </Stack.Group>
+    </Stack.Navigator>
+  );
 }
 
 export default StackNavigation;
