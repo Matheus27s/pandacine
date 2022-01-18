@@ -9,7 +9,7 @@ function FilmDetails({ route, navigation }) {
     const { film } = route.params;
 
     function onNavigation() {
-        navigation.navigate('Select', { film });
+        navigation.navigate('SelectDayEndHour', { film });
     }
 
     return(

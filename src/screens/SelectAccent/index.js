@@ -53,7 +53,7 @@ function SelectAccent({ route, navigation }) {
     }
 
     function handleNavigation() {
-        navigation.navigate('Select', { film });
+        navigation.navigate('SelectDayEndHour', { film });
     }
 
     const handleAccent = (accent) => {

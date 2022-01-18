@@ -7,7 +7,7 @@ import UseTerms from '../screens/UseTerms';
 import Home from '../screens/Home';
 import Dashboard from '../screens/Dashboard';
 import FilmDetails from '../screens/FilmDetails';
-import Select from '../screens/Select';
+import SelectDayEndHour from '../screens/SelectDayEndHour';
 import SelectAccent from '../screens/SelectAccent';
 
 import theme from '../global/styles/theme';
@@ -75,10 +75,10 @@ function StackNavigation() {
       >
         <Stack.Screen
           options={{
-            title: 'Select'
+            title: 'SelectDayEndHour'
           }}
-          name="Select"
-          component={Select}
+          name="SelectDayEndHour"
+          component={SelectDayEndHour}
         />
         <Stack.Screen
           mode="card"
