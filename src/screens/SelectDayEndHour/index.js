@@ -24,62 +24,99 @@ function SelectDayEndHour({ route, navigation }) {
       completeName: "Segunda",
       number: "01",
       backgroundColor: theme.colors.nave,
+      hours: [
+        { id: 1, value: "12:00", backgroundColor: theme.colors.nave },
+        { id: 2, value: "13:45", backgroundColor: theme.colors.nave },
+        { id: 3, value: "15:00", backgroundColor: theme.colors.nave },
+        { id: 4, value: "18:00", backgroundColor: theme.colors.nave },
+        { id: 5, value: "20:45", backgroundColor: theme.colors.nave },
+        { id: 6, value: "22:00", backgroundColor: theme.colors.nave },
+      ],
     },
     {
       id: "3",
       name: "Ter",
       completeName: "Terça",
       number: "02",
-
       backgroundColor: theme.colors.nave,
+      hours: [
+        { id: 1, value: "12:00", backgroundColor: theme.colors.nave },
+        { id: 2, value: "13:45", backgroundColor: theme.colors.nave },
+        { id: 3, value: "15:00", backgroundColor: theme.colors.nave },
+      ],
     },
     {
       id: "4",
       name: "Qua",
       completeName: "Quarta",
       number: "03",
-
       backgroundColor: theme.colors.nave,
+      hours: [
+        { id: 1, value: "12:00", backgroundColor: theme.colors.nave },
+        { id: 2, value: "13:45", backgroundColor: theme.colors.nave },
+        { id: 3, value: "15:00", backgroundColor: theme.colors.nave },
+        { id: 4, value: "18:00", backgroundColor: theme.colors.nave },
+        { id: 5, value: "20:45", backgroundColor: theme.colors.nave },
+      ],
     },
     {
       id: "5",
       name: "Qui",
       completeName: "Quinta",
       number: "04",
-
       backgroundColor: theme.colors.nave,
+      hours: [
+        { id: 1, value: "12:00", backgroundColor: theme.colors.nave },
+        { id: 2, value: "13:45", backgroundColor: theme.colors.nave },
+        { id: 3, value: "15:00", backgroundColor: theme.colors.nave },
+        { id: 4, value: "18:00", backgroundColor: theme.colors.nave },
+      ],
     },
     {
       id: "6",
       name: "Sex",
       completeName: "Sexta",
       number: "05",
-
       backgroundColor: theme.colors.nave,
+      hours: [
+        { id: 1, value: "12:00", backgroundColor: theme.colors.nave },
+        { id: 2, value: "13:45", backgroundColor: theme.colors.nave },
+        { id: 3, value: "15:00", backgroundColor: theme.colors.nave },
+        { id: 4, value: "18:00", backgroundColor: theme.colors.nave },
+        { id: 5, value: "20:45", backgroundColor: theme.colors.nave },
+      ],
     },
     {
       id: "7",
       name: "Sab",
       completeName: "Sábado",
       number: "06",
-
       backgroundColor: theme.colors.nave,
+      hours: [
+        { id: 1, value: "12:00", backgroundColor: theme.colors.nave },
+        { id: 2, value: "13:45", backgroundColor: theme.colors.nave },
+        { id: 3, value: "15:00", backgroundColor: theme.colors.nave },
+        { id: 4, value: "18:00", backgroundColor: theme.colors.nave },
+        { id: 5, value: "20:45", backgroundColor: theme.colors.nave },
+        { id: 6, value: "22:00", backgroundColor: theme.colors.nave },
+      ],
     },
     {
       id: "1",
       name: "Dom",
       completeName: "Domingo",
       number: "07",
-
       backgroundColor: theme.colors.nave,
+      hours: [
+        { id: 1, value: "12:00", backgroundColor: theme.colors.nave },
+        { id: 2, value: "13:45", backgroundColor: theme.colors.nave },
+        { id: 3, value: "15:00", backgroundColor: theme.colors.nave },
+        { id: 4, value: "18:00", backgroundColor: theme.colors.nave },
+      ],
     },
   ]);
 
-  const [hours, setHours] = useState([
-    { id: 1, value: "12:00", backgroundColor: theme.colors.nave },
-    { id: 2, value: "13:00", backgroundColor: theme.colors.nave },
-  ]);
-
+  const [hours, setHours] = useState([]);
   const [daysEndOursSelected, setDaysEndHoursSelected] = useState({
     id: "2",
     name: "",
@@ -124,6 +161,8 @@ function SelectDayEndHour({ route, navigation }) {
       ? (item.backgroundColor = theme.colors.blue)
       : (item.backgroundColor = theme.colors.nave);
 
+    setHours(item.hours);
+
     const array = days.filter((index) => {
       if (index == item) {
         days[index] = item;
@@ -132,7 +171,7 @@ function SelectDayEndHour({ route, navigation }) {
           name: item.name,
           completeName: item.completeName,
           number: item.number,
-          hour: { id: 0, value: "", backgroundColor: "" },
+          hours: [{ id: 0, value: "", backgroundColor: "" }],
           backgroundColor: item.backgroundColor,
         });
       } else {
@@ -185,8 +224,8 @@ function SelectDayEndHour({ route, navigation }) {
         />
       </Animated.View>
       <Text style={styles.comment}></Text>
-      <Text style={styles.content}>Escolha o melhor dia e horário</Text>
       <View style={styles.containerSelect}>
+        <Text style={styles.content}>Dia</Text>
         <FlatList
           horizontal={true}
           contentContainerStyle={styles.containerDays}
@@ -198,30 +237,33 @@ function SelectDayEndHour({ route, navigation }) {
             <TouchableOpacity
               ref={dayRef}
               onPress={() => handleClickDay(item)}
-              style={[
-                styles.days,
-                { backgroundColor: daysEndOursSelected.backgroundColor },
-              ]}
+              style={[styles.days, { backgroundColor: item.backgroundColor }]}
             >
               <Text style={styles.content}>{item.number}</Text>
               <Text style={styles.content}>{item.name}</Text>
             </TouchableOpacity>
           )}
         />
-        <View style={styles.containerHours}>
-          {hours.map((hour) => (
+        {hours.length != 0 && (
+          <Text style={[styles.content, { marginVertical: 8 }]}>Horário</Text>
+        )}
+        <FlatList
+          horizontal={true}
+          contentContainerStyle={styles.containerHours}
+          showsVerticalScrollIndicator={false}
+          showsHorizontalScrollIndicator={false}
+          data={hours}
+          keyExtractor={(item) => item.id}
+          renderItem={({ item }) => (
             <TouchableOpacity
-              style={[
-                styles.hour,
-                { backgroundColor: daysEndOursSelected.hour.backgroundColor },
-              ]}
-              key={hour.id}
-              onPress={() => handleClickHour(hour)}
+              style={[styles.hour, { backgroundColor: item.backgroundColor }]}
+              key={item.id}
+              onPress={() => handleClickHour(item)}
             >
-              <Text style={styles.content}>{hour.value}</Text>
+              <Text style={styles.content}>{item.value}</Text>
             </TouchableOpacity>
-          ))}
-        </View>
+          )}
+        />
       </View>
       <View style={styles.footer}>
         <Button onPress={handleNavigation}>Continuar</Button>

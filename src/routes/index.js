@@ -1,21 +1,21 @@
-import React from 'react';
-import { createNativeStackNavigator } from '@react-navigation/native-stack';
+import React from "react";
+import { createNativeStackNavigator } from "@react-navigation/native-stack";
 
-import ButtonIcons from '../Components/ButtonIcons';
+import ButtonIcons from "../Components/ButtonIcons";
 
-import UseTerms from '../screens/UseTerms';
-import Home from '../screens/Home';
-import Dashboard from '../screens/Dashboard';
-import FilmDetails from '../screens/FilmDetails';
-import SelectDayEndHour from '../screens/SelectDayEndHour';
-import SelectAccent from '../screens/SelectAccent';
+import UseTerms from "../screens/UseTerms";
+import Home from "../screens/Home";
+import Dashboard from "../screens/Dashboard";
+import FilmDetails from "../screens/FilmDetails";
+import SelectDayEndHour from "../screens/SelectDayEndHour";
+import SelectAccent from "../screens/SelectAccent";
+import Finish from "../screens/Finish";
 
-import theme from '../global/styles/theme';
+import theme from "../global/styles/theme";
 
 const Stack = createNativeStackNavigator();
 
 function StackNavigation() {
-
   const screenOptions = {
     headerStyle: {
       backgroundColor: theme.colors.nave,
@@ -24,7 +24,7 @@ function StackNavigation() {
     headerTitleStyle: {
       fontFamily: theme.fonts.bold,
     },
-  }
+  };
 
   return (
     <Stack.Navigator
@@ -34,7 +34,7 @@ function StackNavigation() {
     >
       <Stack.Screen
         options={{
-          title: 'Termo de Uso'
+          title: "Termo de Uso",
         }}
         name="UseTerms"
         component={UseTerms}
@@ -42,10 +42,10 @@ function StackNavigation() {
       <Stack.Screen
         name="Home"
         options={{
-          title: 'Panda Cine',
+          title: "Panda Cine",
           headerRight: () => (
             <ButtonIcons
-              onPress={() => alert('This is a button!')}
+              onPress={() => alert("This is a button!")}
               name="map-marker-alt"
               color="#fff"
               size={24}
@@ -57,25 +57,25 @@ function StackNavigation() {
       <Stack.Screen
         name="Dashboard"
         options={{
-          title: 'Filmes'
+          title: "Filmes",
         }}
         component={Dashboard}
       />
       <Stack.Screen
         options={{
-          title: 'Detalhes'
+          title: "Detalhes",
         }}
         name="FilmDetails"
         component={FilmDetails}
       />
       <Stack.Group
         screenOptions={{
-          presentation: 'transparentModal'
+          presentation: "transparentModal",
         }}
       >
         <Stack.Screen
           options={{
-            title: 'SelectDayEndHour'
+            title: "SelectDayEndHour",
           }}
           name="SelectDayEndHour"
           component={SelectDayEndHour}
@@ -83,13 +83,27 @@ function StackNavigation() {
         <Stack.Screen
           mode="card"
           options={{
-            title: 'SelectAccent'
+            title: "SelectAccent",
           }}
           name="SelectAccent"
           component={SelectAccent}
         />
-
       </Stack.Group>
+      <Stack.Screen
+        name="Finish"
+        options={{
+          title: "Panda Cine",
+          headerRight: () => (
+            <ButtonIcons
+              onPress={() => alert("This is a button!")}
+              name="map-marker-alt"
+              color="#fff"
+              size={24}
+            />
+          ),
+        }}
+        component={Finish}
+      />
     </Stack.Navigator>
   );
 }

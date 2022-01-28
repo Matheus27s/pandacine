@@ -22,13 +22,13 @@ export const styles = StyleSheet.create({
     borderRadius: 10,
   },
   containerSelect: {
-    height: 150,
-    marginVertical: 16,
+    height: theme.size.halfHeight / 1.3,
+    alignItems: "flex-start",
+    justifyContent: "space-around",
   },
   containerDays: {
     alignItems: "center",
     justifyContent: "center",
-    height: 100,
   },
   days: {
     backgroundColor: theme.colors.blue,
@@ -41,17 +41,18 @@ export const styles = StyleSheet.create({
     borderRadius: 20,
   },
   containerHours: {
-    flexDirection: "row",
-    justifyContent: "space-around",
-    height: 38,
-    width: theme.size.fullWidth,
-  },
-  hour: {
-    borderColor: theme.colors.white,
     alignItems: "center",
     justifyContent: "center",
+  },
+  hour: {
+    backgroundColor: theme.colors.blue,
+    marginLeft: 8,
+    marginRight: 8,
+    alignItems: "center",
+    justifyContent: "center",
+    width: 54,
     height: 36,
-    width: 100,
+    borderRadius: 10,
   },
   footer: {
     marginBottom: 16,
