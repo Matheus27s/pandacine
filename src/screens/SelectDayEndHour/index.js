@@ -19,111 +19,110 @@ function SelectDayEndHour({ route, navigation }) {
 
   const [days, setDays] = useState([
     {
-      id: "2",
+      id: 2,
       name: "Seg",
       completeName: "Segunda",
-      number: "01",
-      backgroundColor: theme.colors.nave,
+      number: 1,
+      selected: false,
       hours: [
-        { id: 1, value: "12:00", backgroundColor: theme.colors.nave },
-        { id: 2, value: "13:45", backgroundColor: theme.colors.nave },
-        { id: 3, value: "15:00", backgroundColor: theme.colors.nave },
-        { id: 4, value: "18:00", backgroundColor: theme.colors.nave },
-        { id: 5, value: "20:45", backgroundColor: theme.colors.nave },
-        { id: 6, value: "22:00", backgroundColor: theme.colors.nave },
+        { id: 1, value: "12:00", selected: false },
+        { id: 2, value: "13:45", selected: false },
+        { id: 3, value: "15:00", selected: false },
+        { id: 4, value: "18:00", selected: false },
+        { id: 5, value: "20:45", selected: false },
+        { id: 6, value: "22:00", selected: false },
       ],
     },
     {
-      id: "3",
+      id: 3,
       name: "Ter",
       completeName: "Terça",
-      number: "02",
-      backgroundColor: theme.colors.nave,
+      number: 2,
+      selected: false,
       hours: [
-        { id: 1, value: "12:00", backgroundColor: theme.colors.nave },
-        { id: 2, value: "13:45", backgroundColor: theme.colors.nave },
-        { id: 3, value: "15:00", backgroundColor: theme.colors.nave },
+        { id: 1, value: "12:00", selected: false },
+        { id: 2, value: "13:45", selected: false },
+        { id: 3, value: "15:00", selected: false },
       ],
     },
     {
-      id: "4",
+      id: 4,
       name: "Qua",
       completeName: "Quarta",
-      number: "03",
-      backgroundColor: theme.colors.nave,
+      number: 3,
+      selected: false,
       hours: [
-        { id: 1, value: "12:00", backgroundColor: theme.colors.nave },
-        { id: 2, value: "13:45", backgroundColor: theme.colors.nave },
-        { id: 3, value: "15:00", backgroundColor: theme.colors.nave },
-        { id: 4, value: "18:00", backgroundColor: theme.colors.nave },
-        { id: 5, value: "20:45", backgroundColor: theme.colors.nave },
+        { id: 1, value: "12:00", selected: false },
+        { id: 2, value: "13:45", selected: false },
+        { id: 3, value: "15:00", selected: false },
+        { id: 4, value: "18:00", selected: false },
+        { id: 5, value: "20:45", selected: false },
       ],
     },
     {
-      id: "5",
+      id: 5,
       name: "Qui",
       completeName: "Quinta",
-      number: "04",
-      backgroundColor: theme.colors.nave,
+      number: 4,
+      selected: false,
       hours: [
-        { id: 1, value: "12:00", backgroundColor: theme.colors.nave },
-        { id: 2, value: "13:45", backgroundColor: theme.colors.nave },
-        { id: 3, value: "15:00", backgroundColor: theme.colors.nave },
-        { id: 4, value: "18:00", backgroundColor: theme.colors.nave },
+        { id: 1, value: "12:00", selected: false },
+        { id: 2, value: "13:45", selected: false },
+        { id: 3, value: "15:00", selected: false },
+        { id: 4, value: "18:00", selected: false },
       ],
     },
     {
-      id: "6",
+      id: 6,
       name: "Sex",
       completeName: "Sexta",
-      number: "05",
-      backgroundColor: theme.colors.nave,
+      number: 5,
+      selected: false,
       hours: [
-        { id: 1, value: "12:00", backgroundColor: theme.colors.nave },
-        { id: 2, value: "13:45", backgroundColor: theme.colors.nave },
-        { id: 3, value: "15:00", backgroundColor: theme.colors.nave },
-        { id: 4, value: "18:00", backgroundColor: theme.colors.nave },
-        { id: 5, value: "20:45", backgroundColor: theme.colors.nave },
+        { id: 1, value: "12:00", selected: false },
+        { id: 2, value: "13:45", selected: false },
+        { id: 3, value: "15:00", selected: false },
+        { id: 4, value: "18:00", selected: false },
+        { id: 5, value: "20:45", selected: false },
       ],
     },
     {
-      id: "7",
+      id: 7,
       name: "Sab",
       completeName: "Sábado",
-      number: "06",
-      backgroundColor: theme.colors.nave,
+      number: 6,
+      selected: false,
       hours: [
-        { id: 1, value: "12:00", backgroundColor: theme.colors.nave },
-        { id: 2, value: "13:45", backgroundColor: theme.colors.nave },
-        { id: 3, value: "15:00", backgroundColor: theme.colors.nave },
-        { id: 4, value: "18:00", backgroundColor: theme.colors.nave },
-        { id: 5, value: "20:45", backgroundColor: theme.colors.nave },
-        { id: 6, value: "22:00", backgroundColor: theme.colors.nave },
+        { id: 1, value: "12:00", selected: false },
+        { id: 2, value: "13:45", selected: false },
+        { id: 3, value: "15:00", selected: false },
+        { id: 4, value: "18:00", selected: false },
+        { id: 5, value: "20:45", selected: false },
+        { id: 6, value: "22:00", selected: false },
       ],
     },
     {
-      id: "1",
+      id: 1,
       name: "Dom",
       completeName: "Domingo",
-      number: "07",
-      backgroundColor: theme.colors.nave,
+      number: 7,
+      selected: false,
       hours: [
-        { id: 1, value: "12:00", backgroundColor: theme.colors.nave },
-        { id: 2, value: "13:45", backgroundColor: theme.colors.nave },
-        { id: 3, value: "15:00", backgroundColor: theme.colors.nave },
-        { id: 4, value: "18:00", backgroundColor: theme.colors.nave },
+        { id: 1, value: "12:00", selected: false },
+        { id: 2, value: "13:45", selected: false },
+        { id: 3, value: "15:00", selected: false },
+        { id: 4, value: "18:00", selected: false },
       ],
     },
   ]);
 
   const [hours, setHours] = useState([]);
   const [daysEndOursSelected, setDaysEndHoursSelected] = useState({
-    id: "2",
+    id: 0,
     name: "",
     completeName: "",
-    number: "01",
-    hour: { id: 1, value: "12:00", backgroundColor: theme.colors.nave },
-    backgroundColor: theme.colors.nave,
+    number: 0,
+    hour: { id: 0, value: "", backgroundColor: "" },
   });
 
   //Estados da animação
@@ -157,10 +156,7 @@ function SelectDayEndHour({ route, navigation }) {
   }
 
   function handleClickDay(item) {
-    item.backgroundColor === theme.colors.nave
-      ? (item.backgroundColor = theme.colors.blue)
-      : (item.backgroundColor = theme.colors.nave);
-
+    item.selected ? (item.selected = false) : (item.selected = true);
     setHours(item.hours);
 
     const array = days.filter((index) => {
@@ -172,11 +168,10 @@ function SelectDayEndHour({ route, navigation }) {
           completeName: item.completeName,
           number: item.number,
           hours: [{ id: 0, value: "", backgroundColor: "" }],
-          backgroundColor: item.backgroundColor,
         });
       } else {
         const day = index;
-        day.backgroundColor = theme.colors.nave;
+        day.selected = false;
         days[index] = day;
       }
       return days;
@@ -185,9 +180,7 @@ function SelectDayEndHour({ route, navigation }) {
   }
 
   function handleClickHour(item) {
-    item.backgroundColor === theme.colors.nave
-      ? (item.backgroundColor = theme.colors.blue)
-      : (item.backgroundColor = theme.colors.nave);
+    item.selected ? (item.selected = false) : (item.selected = true);
 
     const array = hours.filter((index) => {
       if (index == item) {
@@ -197,7 +190,7 @@ function SelectDayEndHour({ route, navigation }) {
         setDaysEndHoursSelected(daysEndOursSelectedAux);
       } else {
         const hour = index;
-        hour.backgroundColor = theme.colors.nave;
+        hour.selected = false;
         hours[index] = hour;
       }
       return hours;
@@ -223,9 +216,7 @@ function SelectDayEndHour({ route, navigation }) {
           style={styles.video}
         />
       </Animated.View>
-      <Text style={styles.comment}></Text>
       <View style={styles.containerSelect}>
-        <Text style={styles.content}>Dia</Text>
         <FlatList
           horizontal={true}
           contentContainerStyle={styles.containerDays}
@@ -237,16 +228,30 @@ function SelectDayEndHour({ route, navigation }) {
             <TouchableOpacity
               ref={dayRef}
               onPress={() => handleClickDay(item)}
-              style={[styles.days, { backgroundColor: item.backgroundColor }]}
+              style={[
+                styles.days,
+                {
+                  backgroundColor: item.selected
+                    ? theme.colors.blue
+                    : theme.colors.blue_dark,
+                  marginLeft: item.number !== 1 ? 16 : 0,
+                },
+              ]}
             >
               <Text style={styles.content}>{item.number}</Text>
+              <View
+                style={{
+                  height: 1,
+                  width: 32,
+                  marginVertical: 8,
+                  backgroundColor: theme.colors.nave,
+                }}
+              />
               <Text style={styles.content}>{item.name}</Text>
             </TouchableOpacity>
           )}
         />
-        {hours.length != 0 && (
-          <Text style={[styles.content, { marginVertical: 8 }]}>Horário</Text>
-        )}
+
         <FlatList
           horizontal={true}
           contentContainerStyle={styles.containerHours}
@@ -256,7 +261,15 @@ function SelectDayEndHour({ route, navigation }) {
           keyExtractor={(item) => item.id}
           renderItem={({ item }) => (
             <TouchableOpacity
-              style={[styles.hour, { backgroundColor: item.backgroundColor }]}
+              style={[
+                styles.hour,
+                {
+                  backgroundColor: item.selected
+                    ? theme.colors.blue
+                    : theme.colors.blue_dark,
+                  marginLeft: item.number !== 1 ? 8 : 0,
+                },
+              ]}
               key={item.id}
               onPress={() => handleClickHour(item)}
             >

@@ -53,6 +53,7 @@ export const styles = StyleSheet.create({
     alignItems: "center",
     justifyContent: "center",
     marginRight: 16,
+    width: 94,
   },
   contentPrice: {
     flexDirection: "row",

@@ -75,7 +75,7 @@ function StackNavigation() {
       >
         <Stack.Screen
           options={{
-            title: "SelectDayEndHour",
+            title: "Selecione dia e hora. (1/2)",
           }}
           name="SelectDayEndHour"
           component={SelectDayEndHour}
@@ -83,7 +83,7 @@ function StackNavigation() {
         <Stack.Screen
           mode="card"
           options={{
-            title: "SelectAccent",
+            title: "Selecione acento(s). (2/2)",
           }}
           name="SelectAccent"
           component={SelectAccent}

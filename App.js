@@ -1,18 +1,21 @@
-import React, { useState } from 'react';
-import { enableFreeze } from 'react-native-screens';
-import { NavigationContainer } from '@react-navigation/native';
+import React from "react";
+import { enableFreeze } from "react-native-screens";
+import { NavigationContainer } from "@react-navigation/native";
+import { StatusBar } from "react-native";
 
-import StackNavigation from './src/routes';
+import theme from "./src/global/styles/theme";
+
+import StackNavigation from "./src/routes";
 
 function App() {
-  const [value] = useState('Bem vindo ao React Native!');
   enableFreeze(true);
 
   return (
     <NavigationContainer>
+      <StatusBar barStyle="light-content" backgroundColor={theme.colors.nave} />
       <StackNavigation />
     </NavigationContainer>
   );
-};
+}
 
 export default App;

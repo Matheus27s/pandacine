@@ -219,7 +219,7 @@ function SelectAccent({ route, navigation }) {
               includeComma
               animateToNumber={price}
               fontStyle={styles.title}
-              animationDuration={500}
+              animationDuration={170}
             />
             <Text style={styles.title}>,00</Text>
           </View>
