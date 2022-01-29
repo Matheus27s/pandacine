@@ -5,13 +5,19 @@ import Animated, {
   withTiming,
 } from "react-native-reanimated";
 import Video from "react-native-video";
+import AnimatedNumbers from "react-native-animated-numbers";
 
 import { FlatList, View, Text } from "react-native";
 import Button from "../../Components/Button";
 import { styles } from "./styles";
+import theme from "../../global/styles/theme";
 
 function SelectAccent({ route, navigation }) {
+  const ACCENT_VALUE = 12;
+
   const { film } = route.params;
+
+  const [price, setPrice] = useState(0);
 
   const AnimatedVideo = Animated.createAnimatedComponent(Video);
   const rotateVerticalVideo = useSharedValue(0);
@@ -64,13 +70,20 @@ function SelectAccent({ route, navigation }) {
   }
 
   const handleAccent = (accent) => {
-    if (accent.color === "#C67E3B") {
+    if (
+      accent.color === theme.colors.orange ||
+      accent.color === theme.colors.nave
+    ) {
       return;
     }
 
-    accent.color === "#3549FD"
-      ? (accent.color = "#33CC89")
-      : (accent.color = "#3549FD");
+    if (accent.color === theme.colors.blue) {
+      accent.color = theme.colors.green;
+      setPrice(price + ACCENT_VALUE);
+    } else {
+      accent.color = theme.colors.blue;
+      setPrice(price - ACCENT_VALUE);
+    }
 
     const array = listAccents.filter((index) => {
       if (index == accent) {
@@ -82,41 +95,55 @@ function SelectAccent({ route, navigation }) {
   };
 
   const [listAccents, setListAccents] = useState([
-    { id: "1", color: "#3549FD" },
-    { id: "2", color: "#3549FD" },
-    { id: "3", color: "#3549FD" },
-    { id: "4", color: "#C67E3B" },
-    { id: "5", color: "#3549FD" },
-    { id: "6", color: "#3549FD" },
-    { id: "7", color: "#3549FD" },
-    { id: "8", color: "#3549FD" },
-    { id: "9", color: "#3549FD" },
-    { id: "10", color: "#3549FD" },
-    { id: "11", color: "#3549FD" },
-    { id: "12", color: "#3549FD" },
-    { id: "13", color: "#3549FD" },
-    { id: "14", color: "#C67E3B" },
-    { id: "15", color: "#3549FD" },
-    { id: "16", color: "#C67E3B" },
-    { id: "17", color: "#3549FD" },
-    { id: "18", color: "#3549FD" },
-    { id: "19", color: "#3549FD" },
-    { id: "20", color: "#3549FD" },
-    { id: "21", color: "#3549FD" },
-    { id: "22", color: "#3549FD" },
-    { id: "23", color: "#3549FD" },
-    { id: "24", color: "#C67E3B" },
-    { id: "25", color: "#C67E3B" },
-    { id: "26", color: "#3549FD" },
-    { id: "27", color: "#3549FD" },
-    { id: "28", color: "#3549FD" },
-    { id: "29", color: "#3549FD" },
-    { id: "30", color: "#3549FD" },
-    { id: "31", color: "#3549FD" },
-    { id: "32", color: "#3549FD" },
-    { id: "34", color: "#3549FD" },
-    { id: "35", color: "#3549FD" },
-    { id: "36", color: "#3549FD" },
+    { id: 1, color: theme.colors.nave },
+    { id: 2, color: theme.colors.blue },
+    { id: 3, color: theme.colors.blue },
+    { id: 4, color: theme.colors.orange },
+    { id: 5, color: theme.colors.blue },
+    { id: 6, color: theme.colors.blue },
+    { id: 7, color: theme.colors.nave },
+    { id: 8, color: theme.colors.blue },
+    { id: 9, color: theme.colors.blue },
+    { id: 10, color: theme.colors.blue },
+    { id: 11, color: theme.colors.blue },
+    { id: 12, color: theme.colors.blue },
+    { id: 13, color: theme.colors.blue },
+    { id: 14, color: theme.colors.orange },
+    { id: 15, color: theme.colors.blue },
+    { id: 16, color: theme.colors.orange },
+    { id: 17, color: theme.colors.blue },
+    { id: 18, color: theme.colors.blue },
+    { id: 19, color: theme.colors.blue },
+    { id: 20, color: theme.colors.blue },
+    { id: 21, color: theme.colors.blue },
+    { id: 22, color: theme.colors.blue },
+    { id: 23, color: theme.colors.blue },
+    { id: 24, color: theme.colors.orange },
+    { id: 25, color: theme.colors.orange },
+    { id: 26, color: theme.colors.blue },
+    { id: 27, color: theme.colors.blue },
+    { id: 28, color: theme.colors.blue },
+    { id: 29, color: theme.colors.blue },
+    { id: 30, color: theme.colors.blue },
+    { id: 31, color: theme.colors.blue },
+    { id: 32, color: theme.colors.blue },
+    { id: 34, color: theme.colors.blue },
+    { id: 35, color: theme.colors.blue },
+    { id: 36, color: theme.colors.blue },
+    { id: 37, color: theme.colors.blue },
+    { id: 38, color: theme.colors.blue },
+    { id: 39, color: theme.colors.blue },
+    { id: 40, color: theme.colors.blue },
+    { id: 41, color: theme.colors.blue },
+    { id: 42, color: theme.colors.blue },
+    { id: 43, color: theme.colors.blue },
+    { id: 44, color: theme.colors.blue },
+    { id: 45, color: theme.colors.blue },
+    { id: 46, color: theme.colors.nave },
+    { id: 47, color: theme.colors.nave },
+    { id: 48, color: theme.colors.nave },
+    { id: 49, color: theme.colors.blue },
+    { id: 50, color: theme.colors.blue },
   ]);
 
   return (
@@ -160,8 +187,44 @@ function SelectAccent({ route, navigation }) {
         />
       </Animated.View>
       <Text style={styles.comment}></Text>
+      <View style={styles.containerLablesAccents}>
+        <View style={styles.containerLabel}>
+          <View
+            style={[
+              styles.iconeLabel,
+              { backgroundColor: theme.colors.orange },
+            ]}
+          ></View>
+          <Text style={styles.comment}>Ocupado</Text>
+        </View>
+        <View style={styles.containerLabel}>
+          <View
+            style={[styles.iconeLabel, { backgroundColor: theme.colors.blue }]}
+          ></View>
+          <Text style={styles.comment}>Livre</Text>
+        </View>
+        <View style={styles.containerLabel}>
+          <View
+            style={[styles.iconeLabel, { backgroundColor: theme.colors.green }]}
+          ></View>
+          <Text style={styles.comment}>Selecionado</Text>
+        </View>
+      </View>
       <View style={styles.footer}>
-        <Button onPress={handleNavigation}>Finalizar Pedigo</Button>
+        <View style={styles.containerTotalPrice}>
+          <Text style={styles.comment}>Total a pagar</Text>
+          <View style={styles.contentPrice}>
+            <Text style={styles.title}>R$ </Text>
+            <AnimatedNumbers
+              includeComma
+              animateToNumber={price}
+              fontStyle={styles.title}
+              animationDuration={500}
+            />
+            <Text style={styles.title}>,00</Text>
+          </View>
+        </View>
+        <Button onPress={handleNavigation}>Finalizar</Button>
       </View>
     </View>
   );
